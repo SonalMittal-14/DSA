@@ -17,14 +17,32 @@ public class twoDarray {
             }
         }
 
-        System.out.println("Output row is : ");
+        // System.out.println("Output row is : ");
 
         // output
-        for(int i=0; i<rows; i++){
-            for(int j=0; j<cols; j++){
-                System.out.print(numbers[i][j] + " ");
+        // for(int i=0; i<rows; i++){
+        //     for(int j=0; j<cols; j++){
+        //         System.out.print(numbers[i][j] + " ");
+        //     }
+        //     System.out.println();
+        // }
+
+
+        int x = sc.nextInt();
+        boolean found = false;
+
+        // Search
+        for(int i = 0; i < rows; i++) {
+            for(int j = 0; j < cols; j++) {
+                if(numbers[i][j] == x) {
+                    System.out.println("x is found at (" + i + "," + j + ")");
+                    found = true;
+                }
             }
-            System.out.println();
+        }
+
+        if (!found) {
+            System.out.println("Number not found");
         }
     }
 }

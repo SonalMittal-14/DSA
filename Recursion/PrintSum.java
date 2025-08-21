@@ -7,6 +7,7 @@ public class PrintSum {
         }
         sum += i;
         printSumN(i+1, n, sum);
+        System.out.println(sum); // gives the sum as it goes down
     }
     public static void main(String[] args) {
         printSumN(1, 5, 0);

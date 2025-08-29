@@ -1,15 +1,16 @@
-public class Recursion2{
-    public static void towerOfHanoi(int n, String src, String helper, String destination){
-        if (n ==1){
-            System.out.println("transfer disk"+n+"from"+src+"to"+destination);
-            return ;
+public class TowerOfHanoi {
+    public static void towerHanoi(int n, String src, String helper, String dest) {
+        if (n == 1) {
+            System.out.println("Transfer disk " + n + " from " + src + " to " + dest);
+            return;
         }
-        towerOfHanoi(n-1, src, destination, helper);
-        System.out.println("transfer disk"+n+"from"+src+"to"+destination);
-        towerOfHanoi(n-1, helper, src, destination);
+        towerHanoi(n - 1, src, dest, helper);
+        System.out.println("Transfer disk " + n + " from " + src + " to " + dest);
+        towerHanoi(n - 1, helper, src, dest);
     }
-    public static void main(String args[]){
-        int n=3;
-        towerOfHanoi(n,"Source","Helper","Destination");
+
+    public static void main(String[] args) {
+        int n = 3;
+        towerHanoi(n, "Source", "Helper", "Destination");
     }
 }

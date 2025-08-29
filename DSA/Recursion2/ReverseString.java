@@ -6,7 +6,7 @@ public class ReverseString {
             System.out.println(str.charAt(index));
             return;
         }
-        System.out.println(str.charAt(index)); // har level pe value print hogi
+        System.out.print(str.charAt(index)); // har level pe value print hogi
         stringReverse(str, index-1);//and then we call index-1
     }
     public static void main(String[] args) {

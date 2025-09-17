@@ -1,0 +1,45 @@
+Java is an Object Oriented Programming Language.
+
+Java is known for its "Write once , Run anywhere" capability, java code can run on any platform that has a Java Virtual Machine (JVM) installed. This platform independence is one of the Java's Biggest strength.
+
+When you install JDK , you are installing JVM and JRE.
+
+JDK -> The java development kit is a comprehensive software development environment used for developing java applications. It includes everything you need to develop java programs, including : 
+-> The java compiler (javac) to convert java source code (.java files) into bytecodes (.class files)
+-> Development tools like debugger, documentation generator (javadoc).
+-> Source files for java core classes 
+-> the JRE (which includes the JVM)
+
+
+JRE -> Java Runtime Environment
+The JRE is what's needed to run java applications on the computer. it consists of :
+-> The Java Virtual Machine (JVM)
+-> Compiled code classes (like strings, integer, Arraylist etc) and supporting files (like Configuration files that tell java how to run)
+-> No development tools (unlike JDK) -> it's means for end users who just want to run java applications
+-> JRE can be installed without JDK (Java Development Kit) since JRE is only needed to run java applications, while JDK is needed to develop them.
+
+
+JVM -> Java Virtual Machine 
+JVM is the actual engine that runs the Java bytecodes on any platform.
+
+basically , 
+JDk ke andar h:
+    development tools (javac, etc)
+    source code 
+    JRE ke andar h :
+        JVM 
+        core classes (compiled)
+        Supporting files
+
+
+To Summarize :
+-> JDK contains JRE , which contains JVM.
+-> Developers needed JDK to create Java Applications.
+-> End users only need JRE to run Java Applications.
+-> JVM is the actual engine that runs the java bytecodes on any platform.
+
+
+A java program runs through a clear pipeline : 
+-> Source code is written in .java files.
+-> Compilation transforms it into platform-independent bytecodes (.class)
+-> Execution  is handled by the JVM , which interprets or compiles the bytecodes into native code for the specific operating system and hardware, allowing the program to run seamlessly across the different environment.

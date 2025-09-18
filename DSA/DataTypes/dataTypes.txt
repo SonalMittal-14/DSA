@@ -1,0 +1,19 @@
+Integral Number 
+-> byte : 1 byte
+-> short : 2 byte
+-> int : 4 byte 
+-> long : 8 byte 
+
+Decimal Number 
+-> float : 4 byte 
+-> double : 8 byte 
+
+True/False 
+-> boolean : 1 byte
+
+Charaters
+-> char : 2 byte 
+
+String
+String s1 = "Hello"; --->>> String Literal
+String s2 = new String("Hello"); --->>> Using Constructor 

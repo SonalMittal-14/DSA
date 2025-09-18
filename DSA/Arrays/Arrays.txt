@@ -1,0 +1,7 @@
+An array in java is a data structure that stores a fixed size sequential collection of elements of the same type.
+
+Declaration:
+An array must be declared with the specific data type 
+int[] Number; --->> recommended 
+or
+int number[]; -->>> allowed, but less common 

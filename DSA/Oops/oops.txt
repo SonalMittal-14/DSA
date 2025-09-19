@@ -1,0 +1,38 @@
+A programming paradign that uses objects and classes to deisgn and implement software solutions.
+
+Key concepts of OOPS:
+-> class
+-> objects
+-> Encapsulation 
+-> Inheritance 
+-> Polymorphisum
+-> Abstraction
+
+Class ->>> A class is a blueprint for creating objects. It defines the structure (fields) and behaviour (methods) of objects.
+
+class car{
+    String color;  --->>> fields
+    int speed; --->>> field
+
+    void drive(){ --->>>> method
+        System.out.println("Car is driving");
+    }
+}
+
+
+
+OBJECTS ---->>> An object is an instance of a class. It represent a real-world entity and has attributes and behaviour.
+
+Car myCar = new Car();
+myCar.color = "Red";
+myCar.drive(); 
+
+
+
+ENCAPSULATION ---->>>> Encapsulation is the practice of bundling data (fields) and methods (functions) that operate on the data into a single unit (class). It also involves restricting direct access to some components using access modifiers (eg., private , protected).
+
+
+CONSTRCTOR --->>> Constructor is a method which is used to intialize a new object.
+
+
+INHERITANCE ---->>>> Inheritance allows a class to acquire properties and methods of another class. It supoorts code resusability. 

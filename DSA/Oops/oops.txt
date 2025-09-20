@@ -36,3 +36,14 @@ CONSTRCTOR --->>> Constructor is a method which is used to intialize a new objec
 
 
 INHERITANCE ---->>>> Inheritance allows a class to acquire properties and methods of another class. It supoorts code resusability. 
+
+class Animal {
+    void eat(){
+        System.out.println("This animal eat food");
+    }
+}
+Class Dog extends Animal {
+    void bark(){
+        System.out.println("Dog Barks");
+    }
+}

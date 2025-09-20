@@ -37,13 +37,122 @@ CONSTRCTOR --->>> Constructor is a method which is used to intialize a new objec
 
 INHERITANCE ---->>>> Inheritance allows a class to acquire properties and methods of another class. It supoorts code resusability. 
 
-class Animal {
+
+
+class Animal {  --->>> Single Inheritance
     void eat(){
         System.out.println("This animal eat food");
     }
 }
-Class Dog extends Animal {
+Class Dog extends Animal { -->>> child class jismai eat method automatically aa gaya 
     void bark(){
         System.out.println("Dog Barks");
     }
 }
+
+
+Types of Inheritance:
+    Single 
+    Multilevel
+    Hierarchical
+
+--->>>> Multiple Inheritance is not there in java.
+JAVA does not support Multiple Inheritance.
+
+
+
+POLYMORPHISUM -->>>> Polymorphisum allows methods to perform different tasks based on the object that calls them.
+
+it can be achieved via :
+    Runtime Polymorphisum (Method Overriding)
+    Compile-time Polymorphisum (Method Overloading)
+
+
+
+METHOD OVERLOADING [COMPILE TIME POLYMORPHISUM]
+Method Overloading in java is a feature that allows a class to have multiple methods with the same name but different parameters lists. It enables a method to perform different tasks depending on the arguments passed to it.
+
+
+class Calculator{
+    ---->>>> Add two integer
+    int add (int a, int b){
+        return a+b;
+    }
+
+    ---->>> Add three integers
+    int add (int a, int b, int c ){
+        return a+b+c;
+    }
+}
+public class MAin{
+    public static voif main(String[] args){
+        Calculator calc = new Calculator();
+        System.out.println(calc.add(2,3)); --->>> Output : 5
+        System.out.println(clac.add(1,2,3)); ---->>> Output : 6
+    }
+}
+
+
+Method ka name same h compiler pata kar leta h depending on variable.
+
+
+
+RUN-TIME POLYMORPHISUM [DYNAMIC POLYMORPHISUM]
+Run-time Polymorphisum is achieved through method Overriding, where a subclass provieds a specific implementation of a method already define in its parent class. The method to be called is determined at runtime based on the object.
+
+Runtime pe pata chalega ki exactly karna kya h
+
+
+class Animal{
+    void sound(){
+        system.out.println("Anumal makes a sound");
+    }
+}
+class dog extends Animal{
+    void sound(){
+        system.out.println("dog barks");
+    }
+}
+class cat extends Animal{ --->>> sound overide kar lia 
+    void sound(){
+        system.out.println("cat meows");
+    }
+}
+public class Main{
+    public static void main(String[] args){
+        Animal animal1 = new Dog(); --->>> upcasting -->> dog object dal rahe h animal class mai 
+        Animal animal2 = new cat(); --->>> upcasting -->> cat object dal rahe h animal class mai
+
+        animal1.sound(); ---->>>> call's dog's overridden method : "Dog barks"  -->> kis type ka object h vo program chalega 
+        animal2.sound(); ---->>>> call's cat's overridden method : "Cat meows"
+    }
+}
+
+
+
+ABSTRACTION 
+Abstraction focuses on showing only essential details while hiding the implementation. It is achievedthrough abstract classes and interfaces.
+
+
+ABSTRACT CLASS 
+    ->Declared using the abstract keyword.
+    ->can include both abstract methods (method without a body) and concrete methods (methods with a body).
+    -> cannot be instantiated directly
+    ->acts as a blueprint for subclasses, which must implement the abstract methods.
+
+
+agar hume kisi class ka blueprint provide karna h ki aage ki class kesi rahenge toh hum abstract keyword ka use karte h
+
+abstract class Animal {
+    public abstract void sayHello();
+    public abstract void satBye();
+    public void sleep(){  --->>> jinhki defination hai 
+        system.out.print("Zzzz..");
+    }
+}
+
+
+
+INTERFACE 
+Class ---->>> Blueprint for object
+Interface --->>> Blueprint for class 

@@ -155,4 +155,4 @@ abstract class Animal {
 
 INTERFACE 
 Class ---->>>> Blueprint for object.
-Interface ---->>>> Blueprint for class.
+Interface ---->>>> Blueprint for class....

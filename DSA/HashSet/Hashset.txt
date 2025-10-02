@@ -1,0 +1,12 @@
+HashSet is the data structure which have unique values and does not allows dublicates.
+Its is one of the importanat data structutre.
+
+Time Complexity of HashSet    | Array  | Sorted Array
+-->> Insert/Add : O(1)        | O(1)   | O(n)
+-->> Search/Conatin : O(1)    | O(n)   | O(log n)
+-->> Delete/Remove : o(1)     | O(n)   | O(n)
+
+
+->>> If we want to search anything in a set then we use the function "contains"
+
+--->> if we want to delet anything from the set then we have the fucnction "remove".

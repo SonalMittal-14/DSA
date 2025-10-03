@@ -1,0 +1,3 @@
+It store key value pairs.
+key -> humari unique value hogi
+value -> same bhi ho sakti hai and unique bhi  

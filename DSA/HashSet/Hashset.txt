@@ -1,6 +1,8 @@
 HashSet is the data structure which have unique values and does not allows dublicates.
 Its is one of the importanat data structutre.
 
+HashSet makes no garantees as to the iteration order of the set. in particular, it does not guarantee that the order will remain constant over time.
+
 Time Complexity of HashSet    | Array  | Sorted Array
 -->> Insert/Add : O(1)        | O(1)   | O(n)
 -->> Search/Conatin : O(1)    | O(n)   | O(log n)
@@ -10,3 +12,17 @@ Time Complexity of HashSet    | Array  | Sorted Array
 ->>> If we want to search anything in a set then we use the function "contains"
 
 --->> if we want to delet anything from the set then we have the fucnction "remove".
+
+
+-->>> ITERATOR
+It has two main function ->> "hasNext" and "next"
+
+"next" agar hum karenge toh vo next value return karega like agar array h [1,2,3] toh next ka use karenge toh 
+it.next karenge toh 1 return karnega uske baad aage ki value 
+
+"hasNext" true/false return karta h agar value hogi toh true nahi toh false.
+
+
+while(it.hasNext()){
+    print(it.next());
+}

@@ -12,5 +12,8 @@ public class HashMapExample {
         map.put("China", 150);
 
         System.out.println(map);
+
+        map.put("China", 200);
+        System.out.println(map);
     }
 }

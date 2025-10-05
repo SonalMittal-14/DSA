@@ -2,4 +2,10 @@ It store key value pairs.
 key -> humari unique value hogi
 value -> same bhi ho sakti hai and unique bhi  
 
+HashMaps are the unordered maps. 
+
+
+insertion in HashMap
+-->> exist -> value got updated
+-->> dosen't -> creates the new key value pair and insert it
 for insertion we use "put"

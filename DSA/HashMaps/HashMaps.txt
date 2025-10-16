@@ -9,3 +9,13 @@ insertion in HashMap
 -->> exist -> value got updated
 -->> dosen't -> creates the new key value pair and insert it
 for insertion we use "put"
+
+
+IMPLEMENTATION OF HASHMAPS 
+Time Complexity -->>> O(1)
+put() --->> to add data in the HashMap
+get() -->> to get data from the hashmaps
+containsKey() -->> to find the that the hashmaps contains key or not
+remove() -->> to remove any key value pair 
+size() -->> to find the total pairs in a hashmap
+keySet() -->> give the key set in a hashmap

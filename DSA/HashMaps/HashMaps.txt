@@ -19,3 +19,18 @@ containsKey() -->> to find the that the hashmaps contains key or not
 remove() -->> to remove any key value pair 
 size() -->> to find the total pairs in a hashmap
 keySet() -->> give the key set in a hashmap
+
+
+
+In hashmap the data is stored in the form of "Array of Linked List" -->> internal implementio  of hashmap
+
+In hashmap data is stoed in form of "Busckets"
+
+
+put -->> exist -->> updates 
+    -->> dosen't exist -->> add new (key, value) pair
+
+
+hashing is basically changing the from of something 
+
+Rehashing mai agar array ka size change hota h toh bucket index bhi change ho sakta haiiii

@@ -1,0 +1,214 @@
+
+## 🔹 Overall Idea
+
+HashMap ek **key-value pair** data structure hota hai.
+Yahan humne ek **Generic HashMap** banayi hai jo kisi bhi type ke key aur value ko support kare (`<K, V>`).
+
+Example:
+
+```java
+HashMap<String, Integer> map = new HashMap<>();
+map.put("India", 190);
+```
+
+➡️ Isme `"India"` key hai aur `190` value hai.
+
+---
+
+## 🧱 Class Structure
+
+### 1️⃣ `Node` class
+
+Yeh ek **inner class** hai jo ek entry ko represent karti hai.
+
+```java
+private class Node {
+    K key;
+    V value;
+}
+```
+
+Har ek bucket ke andar multiple nodes ho sakte hain (agar collision ho jaye).
+
+---
+
+### 2️⃣ Variables
+
+```java
+private int n; // total key-value pairs (nodes)
+private int N; // total number of buckets
+private LinkedList<Node>[] buckets;
+```
+
+* **buckets** ek array hai of LinkedLists —
+  Har bucket ek "chain" jaisi hoti hai jisme multiple key-value pairs store hote hain.
+  (Collision ke case mein ek hi bucket ke andar multiple Node store karte hain)
+
+---
+
+### 3️⃣ Constructor
+
+```java
+public HashMap() {
+    this.N = 4;
+    this.buckets = new LinkedList[4];
+    for (int i = 0; i < 4; i++) {
+        this.buckets[i] = new LinkedList<>();
+    }
+}
+```
+
+Starting mein 4 buckets banaye jaate hain —
+sab empty LinkedList hoti hain.
+Matlab initially 4 slots available hain data store karne ke liye.
+
+---
+
+## 🧮 4️⃣ Hash Function
+
+```java
+private int hashFunction(K key) {
+    int bi = key.hashCode();
+    return Math.abs(bi) % N;
+}
+```
+
+Ye function decide karta hai ki **key kis bucket** mein jayegi.
+
+* `key.hashCode()` har key ka ek integer code deta hai.
+* `% N` ensures that index always lies between `0` and `N-1`.
+
+Example:
+`"India".hashCode()` kuch large number deta hai → mod 4 karne se ek bucket index milta hai (0–3).
+
+---
+
+## 🔍 5️⃣ searchInLL()
+
+```java
+private int searchInLL(K key, int bi)
+```
+
+Ye function ek bucket (LinkedList) ke andar search karta hai ki key pehle se exist karti hai ya nahi.
+Agar mil gayi to index return karta hai, warna `-1`.
+
+**Note:** Hum `.equals()` use kar rahe hain taaki key ka value compare ho, reference nahi.
+
+---
+
+## ♻️ 6️⃣ rehash()
+
+```java
+private void rehash() {
+    LinkedList<Node>[] oldBucket = buckets;
+    N = N * 2;
+    buckets = new LinkedList[N];
+    ...
+}
+```
+
+Jab **load factor** (i.e. `n/N`) > 2 ho jaata hai, to hum bucket size **double** kar dete hain.
+Is process ko rehashing kehte hain.
+Phir saare purane elements ko nayi bucket array mein redistribute karte hain (kyunki `N` badal gaya hai).
+
+---
+
+## ✏️ 7️⃣ put()
+
+```java
+public void put(K key, V value)
+```
+
+* Pehle hashFunction se bucket index (`bi`) find karte hain.
+* searchInLL() se check karte hain ki key already hai ya nahi.
+
+  * Agar nahi hai → nayi node add karte hain.
+  * Agar hai → uska value update karte hain.
+* Phir check karte hain agar `load factor > 2` hai to `rehash()` karte hain.
+
+---
+
+## 🔎 8️⃣ get()
+
+```java
+public V get(K key)
+```
+
+* Key ke bucket index find karo
+* Bucket ke andar search karo
+* Agar mili to uski value return karo
+* Nahi mili to `null` return karo
+
+---
+
+## ❌ 9️⃣ remove()
+
+```java
+public V remove(K key)
+```
+
+* Key dhoondo
+* Agar mil gayi to LinkedList se remove kar do
+* Value return kar do
+
+---
+
+## 🗝️ 🔟 keySet()
+
+```java
+public ArrayList<K> keySet()
+```
+
+* Har bucket ke andar jao
+* Har node ka key list mein add karo
+* Saari keys ek ArrayList ke form mein return karo
+
+---
+
+## 🚫 11️⃣ isEmpty()
+
+Bas check karta hai agar `n == 0` hai to true, warna false.
+
+---
+
+## ▶️ Main Method
+
+```java
+public static void main(String args[]) {
+    HashMap<String, Integer> map = new HashMap<>();
+    map.put("India", 190);
+    map.put("China", 200);
+    map.put("US", 50);
+
+    ArrayList<String> keys = map.keySet();
+    for (int i = 0; i < keys.size(); i++) {
+        System.out.println(keys.get(i) + " " + map.get(keys.get(i)));
+    }
+
+    map.remove("India");
+    System.out.println("After removing India → " + map.get("India"));
+}
+```
+
+**Output:**
+
+```
+India 190
+China 200
+US 50
+After removing India → null
+```
+
+---
+
+## 🧠 Short Summary in Hinglish
+
+👉 Ye code ek **basic version of HashMap** banata hai using:
+
+* **Array of LinkedLists (buckets)**
+* **Custom hash function**
+* **Separate chaining** for collisions
+* **Rehashing** jab load factor zyada ho jaata hai
+
+Basically tumne ek chhoti si **mini HashMap library** khud likh li hai 😄👏
+
